@@ -50,14 +50,14 @@ while True:
     if user_prompt.lower() == "exit":
         break
 
-    # If the conversation is too long, summarize it and keep only the last 10 messages
-    # if len(conversation) > 20:
+    If the conversation is too long, summarize it and keep only the last 10 messages
+    if len(conversation) > 20:
 
-    #     conversation_summary = gemini.summarize_conversation(
-    #         conversation
-    #     )
+        conversation_summary = gemini.summarize_conversation(
+            conversation
+        )
 
-    #     conversation = conversation[-10:]
+        conversation = conversation[-10:]
     
     conversation.append(
     {
@@ -70,7 +70,7 @@ while True:
     request = gemini.create_analysis_request(
         user_prompt,
         dataset_profile,
-        # conversation_summary,
+        conversation_summary,
         conversation
     )
 
